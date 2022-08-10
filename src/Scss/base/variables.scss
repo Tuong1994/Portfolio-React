@@ -1,0 +1,29 @@
+// Background color
+$primary: #fff;
+$secondary: #7485ea;
+$purple-1: #bac2ec;
+$green: #62d568;
+$blue: #4164e5;
+$orange: #f5c84d;
+$red: #dc3636;
+$dark-1: #333;
+$RGBA-dark-1: rgba(0, 0, 0, 0.3);
+$RGBA-purple-1: rgba(116, 133, 234, 0.7);
+$gradient-top-purple: linear-gradient(to top, #7485ea 20%, transparent 90%);
+$gradient-left-purple: linear-gradient(to left, #7485ea 30%, rgba(116, 133, 234, 0.5) 80%);
+
+// Text color
+$tPrimary: #222;
+$tSecondary: #fff;
+$tPurple: #7485ea;
+
+// Text size
+$large: 35px;
+$medium: 20px;
+$regular: 14px;
+$small: 12px;
+
+// Text weight
+$light: 300;
+$thin: 400;
+$bold: 700;

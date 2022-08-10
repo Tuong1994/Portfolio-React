@@ -1,0 +1,31 @@
+.button {
+  padding: 10px;
+  border: 1px solid transparent;
+  background: $secondary;
+  color: $tSecondary;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  outline: none !important;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.button--success {
+  background: $green;
+}
+
+.button--danger {
+  background: $red;
+}
+
+.button--primary {
+  background: $blue;
+}
+
+.button--warning {
+  background: $orange;
+}

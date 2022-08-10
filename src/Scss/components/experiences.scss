@@ -1,0 +1,92 @@
+.experiences {
+  width: 100%;
+  padding: 50px 200px;
+  opacity: 0;
+  transition: 0.5s ease;
+  .experiences__title {
+    color: $tPurple;
+    margin-bottom: 50px;
+  }
+  .experiences__wrapper {
+    padding: 20px 0;
+    .wrapper__item {
+      margin-left: 20px;
+      padding-left: 40px;
+      padding-bottom: 10px;
+      border-left: 4px solid $secondary;
+      display: flex;
+      position: relative;
+      &::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        background: $secondary;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        left: -23px;
+        @include respond(phone) {
+          width: 25px;
+          height: 25px;
+          left: -13px;
+        }
+      }
+      .item__image {
+        margin-right: 20px;
+        padding: 10px;
+        border: 1px solid $secondary;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image {
+          width: 200px;
+          height: 200px;
+          border-radius: 4px;
+          @include respond(phone) {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        @include respond(phone) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      .item__content {
+        .content__text {
+          &:nth-child(1) {
+            font-size: $large - 5;
+            @include respond(phone) {
+              font-size: $medium;
+            }
+          }
+          &:nth-child(2) {
+            font-size: $regular + 4;
+          }
+          strong {
+            margin-right: 10px;
+          }
+        }
+      }
+      @include respond(phone) {
+        flex-direction: column;
+        padding-left: 20px;
+        border-width: 2px;
+      }
+    }
+  }
+  @include respond(laptop) {
+    padding: 50px;
+  }
+  @include respond(tablet) {
+    padding: 50px 20px;
+  }
+  @include respond(phone) {
+    padding: 50px 10px;
+  }
+}
+
+.experiences--reveal {
+  opacity: 1;
+}

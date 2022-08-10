@@ -1,0 +1,87 @@
+.skills {
+  width: 100%;
+  padding: 50px 200px;
+  background: $secondary;
+  color: $tSecondary;
+  opacity: 0;
+  transition: 0.5s ease;
+  .skills__title {
+    margin-bottom: 50px;
+  }
+  .skills__wrapper {
+    display: flex;
+    justify-content: space-between;
+    .wrapper__group {
+      width: 50%;
+      display: flex;
+      .group__icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: $primary;
+          color: $tPrimary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .icon__line {
+          width: 5px;
+          height: 250px;
+          background: $primary;
+          @include respond(tablet) {
+            height: 200px;
+          }
+        }
+      }
+      .group__inner {
+        margin-left: 10px;
+        .inner__title {
+          @include respond(extraTablet) {
+            font-size: $medium + 5;
+          }
+          @include respond(tablet) {
+            font-size: $medium;
+          }
+        }
+        .inner__list {
+          margin-left: 10px;
+          .list__item {
+            padding: 10px 0;
+            list-style: none;
+            font-size: $medium;
+            i {
+              margin-right: 10px;
+            }
+            @include respond(tablet) {
+              font-size: $regular + 2;
+            }
+          }
+        }
+      }
+      @include respond(phone) {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+  @include respond(laptop) {
+    padding: 50px;
+  }
+  @include respond(tablet) {
+    padding: 50px 20px;
+  }
+  @include respond(phone) {
+    padding: 50px 10px;
+  }
+}
+
+.skills--reveal {
+  opacity: 1;
+}

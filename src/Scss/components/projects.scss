@@ -1,0 +1,146 @@
+.projects {
+  width: 100%;
+  padding: 50px 200px;
+  opacity: 0;
+  transition: 0.5s ease;
+  .projects__title {
+    text-align: center;
+    color: $tPurple;
+    margin-bottom: 50px;
+  }
+  .projects__tabs {
+    .tabs__title {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .title__item {
+        width: 200px;
+      }
+    }
+    .tabs__content {
+      margin: 20px 0;
+      .content__group {
+        display: none;
+        animation: fadeIn 0.5s linear 1;
+        .group__inner {
+          .inner__item {
+            border-top: 1px solid $secondary;
+            border-left: 1px solid $secondary;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            transition: all 0.5s;
+            &:hover {
+              background: $gradient-left-purple;
+              color: $tSecondary;
+            }
+            &:hover .item__image .image {
+              transform: scale(1.1);
+            }
+            &:hover .item__image .image__backdrop {
+              opacity: 1;
+              visibility: visible;
+            }
+            &:hover .item__image .image__backdrop .backdrop__link {
+              bottom: 50px;
+            }
+            .item__image {
+              width: 40%;
+              margin-right: 20px;
+              border-radius: 6px;
+              overflow: hidden;
+              position: relative;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: $RGBA-dark-1;
+              }
+              .image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: 0.5s;
+              }
+              .image__backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: $gradient-top-purple;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.3s;
+                .backdrop__link {
+                  width: 150px;
+                  padding: 10px;
+                  text-decoration: none;
+                  text-align: center;
+                  display: block;
+                  color: $tSecondary;
+                  border: 1px solid $primary;
+                  border-radius: 4px;
+                  position: absolute;
+                  left: 50%;
+                  bottom: -50px;
+                  transform: translateX(-50%);
+                  transition: 0.5s;
+                  z-index: 9;
+                }
+              }
+            }
+            .item__content {
+              width: 60%;
+              .content__text {
+                margin-bottom: 5px;
+              }
+              .content__list {
+                .list__item {
+                  margin-left: 20px;
+                }
+              }
+            }
+            @include respond(laptop) {
+              padding: 10px;
+            }
+          }
+        }
+      }
+      .content__group--active {
+        display: block;
+      }
+    }
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+  @include respond(laptop) {
+    padding: 50px 20px;
+  }
+  @include respond(tablet) {
+    padding: 50px 30px;
+  }
+  @include respond(phone) {
+    padding: 50px 10px;
+  }
+}
+
+.projects--reveal {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

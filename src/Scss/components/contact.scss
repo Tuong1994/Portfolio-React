@@ -1,0 +1,60 @@
+.contact {
+  width: 100%;
+  padding: 50px 200px;
+  background: $secondary;
+  .contact__title {
+    color: $tSecondary;
+    margin-bottom: 50px;
+  }
+  .contact__group {
+    display: flex;
+    justify-content: space-between;
+    .group__content {
+      font-size: $medium;
+      .content__inner {
+        padding: 10px 0;
+        color: $tSecondary;
+        i {
+          margin-right: 20px;
+          @include respond(phone) {
+            margin: 0 10px;
+          }
+        }
+      }
+      @include respond(phone) {
+        font-size: $regular + 2;
+      }
+    }
+    .group__social {
+      .social__link {
+        display: block;
+        text-decoration: none;
+        color: $tSecondary;
+        padding: 10px;
+        font-size: $large + 10;
+        i {
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      @include respond(phone) {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+  @include respond(laptop) {
+    padding: 50px;
+  }
+  @include respond(tablet) {
+    padding: 50px 20px;
+  }
+  @include respond(phone) {
+    padding: 50px 10px;
+  }
+}

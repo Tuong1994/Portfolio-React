@@ -1,0 +1,94 @@
+.education {
+  width: 100%;
+  height: 100vh;
+  padding: 50px 200px;
+  opacity: 0;
+  transition: 0.5s ease;
+  .education__title {
+    color: $tPurple;
+    margin-bottom: 50px;
+  }
+  .education__wrapper {
+    padding: 20px;
+    border-left: 1px solid $secondary;
+    border-top: 1px solid $secondary;
+    border-radius: 10px;
+    display: flex;
+    &:hover .wrapper__image .image {
+      transform: scale(1.1);
+      @include respond(extraTablet) {
+        transform: scale(1);
+      }
+    }
+    .wrapper__image {
+      width: 300px;
+      height: 300px;
+      margin-right: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+        @include respond(tablet) {
+          width: 300px;
+          border-radius: 10px;
+        }
+      }
+      @include respond(tablet) {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .wrapper__content {
+      .content__title {
+        @include respond(phone) {
+          font-size: $large - 10;
+        }
+      }
+      .content__detail {
+        .detail__title {
+          @include respond(phone) {
+            font-size: $medium;
+          }
+        }
+        .detail__subTitle {
+          margin: 0;
+        }
+        .detail__list {
+          margin-left: 30px;
+          margin-bottom: 5px;
+          .list__item {
+            font-size: $regular;
+          }
+        }
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+    @include respond(phone) {
+      flex-direction: column;
+      padding: 0;
+      border: 0;
+    }
+  }
+  @include respond(laptop) {
+    padding: 50px 20px;
+  }
+  @include respond(extraTablet) {
+    height: auto;
+    padding: 50px 20px;
+  }
+  @include respond(phone) {
+    height: auto;
+    padding: 50px 10px;
+  }
+}
+
+.education--reveal {
+  opacity: 1;
+}

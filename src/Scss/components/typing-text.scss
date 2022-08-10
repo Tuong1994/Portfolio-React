@@ -1,0 +1,38 @@
+.typing-text {
+  height: 50px;
+  overflow: hidden;
+  .typing-text__dynamic {
+    height: 100%;
+    line-height: 50px;
+    font-size: $large;
+    font-weight: $bold;
+    color: $tPurple;
+    display: flex;
+    align-items: center;
+    .dynamic__line {
+      display: inline-block;
+      width: 3px;
+      height: 50px;
+      background: $secondary;
+      animation: blink 1s infinite ease;
+      @include respond(phone) {
+        height: 30px;
+      }
+    }
+    @include respond(phone) {
+      font-size: $medium + 3;
+    }
+  }
+  @include respond(phone) {
+    height: 30px;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,102 @@
+.header {
+  width: 100%;
+  padding: 10px;
+  background: $secondary;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  .header__menu {
+    display: block;
+    .menu__item {
+      display: inline-block;
+      padding: 20px 10px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: $tSecondary;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: $primary;
+        transition: 0.5s ease;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+    .menu__item--active {
+      &::after {
+        width: 100%;
+      }
+    }
+    @include respond(extraTablet) {
+      display: none;
+    }
+  }
+  .header__feature {
+    display: flex;
+    .feature__theme {
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      .theme__icon {
+        margin: 0 5px;
+        color: $tSecondary;
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+      .theme__icon--active {
+        opacity: 1;
+      }
+    }
+    .feature__lang {
+      border: 1px solid $primary;
+      border-radius: 20px;
+      overflow: hidden;
+      .lang {
+        width: 60px;
+        padding: 2px;
+        font-size: $regular;
+        color: $tSecondary;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .lang--active {
+        background: $primary;
+        color: $tPrimary;
+      }
+    }
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  .header__drop-button {
+    width: 40px;
+    height: 40px;
+    color: $primary;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    position: relative;
+    display: none;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @include respond(extraTablet) {
+      display: block;
+    }
+  }
+}
